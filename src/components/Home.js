@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Container>
-                <Row xs={1} md={2} lg={4} className=" " >
+                <Row xs={1} md={2} lg={4} >
                     {
                         topics.map(topic => <Topic
                             key={topic.id}
