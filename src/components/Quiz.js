@@ -3,9 +3,11 @@ import { useLoaderData } from 'react-router-dom';
 import './Quiz.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye } from 'react-icons/fa';
 const Quiz = () => {
     const notify = () => toast("Correct Answer!");
     const notify2 = () => toast("Wrong Answer!");
+    const notify3 = (ans) => toast(ans);
     const questions = useLoaderData().data.questions;
     console.log(questions);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -51,11 +53,12 @@ const Quiz = () => {
                             <div className='question-count'>
                                 <span>Question {currentQuestion + 1}</span>/{questions.length}
                             </div>
-                            <div className='question-text'>{getFinalText(questions[currentQuestion].question)}</div>
+                            <div className='question-text'>{getFinalText(questions[currentQuestion].question)}
+                                <div><FaEye onClick={() => notify3(questions[currentQuestion].correctAnswer)} /></div></div>
                         </div>
                         <div className='answer-section'>
                             {questions[currentQuestion].options.map((answerOption) => (
-                                <button onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].correctAnswer)}>{answerOption}</button>
+                                <button className='btn' onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].correctAnswer)}>{answerOption}</button>
                             ))}
                         </div>
                     </>
