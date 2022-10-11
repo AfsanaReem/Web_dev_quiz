@@ -58,7 +58,7 @@ const Quiz = () => {
                         </div>
                         <div className='answer-section'>
                             {questions[currentQuestion].options.map((answerOption) => (
-                                <button className='btn' onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].correctAnswer)}>{answerOption}</button>
+                                <button onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].correctAnswer)}>{answerOption}</button>
                             ))}
                         </div>
                     </>
