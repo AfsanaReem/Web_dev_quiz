@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog";
+import CarouselHome from "../components/CarouselHome";
+import Header from "../components/Header";
 import Home from "../components/Home";
 import Quiz from "../components/Quiz";
 import Statistics from "../components/Statistics";
@@ -14,6 +16,13 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                loader: async () => {
+                    return fetch('https://openapi.programming-hero.com/api/quiz')
+                },
+                element: <CarouselHome></CarouselHome>
+            },
+            {
+                path: '/topics',
                 loader: async () => {
                     return fetch('https://openapi.programming-hero.com/api/quiz')
                 },
@@ -38,5 +47,12 @@ export const router = createBrowserRouter([
                 element: <Quiz></Quiz>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <div>
+            <Header></Header>
+            <img src="page404.jpg"></img>
+        </div>
     }
 ])
