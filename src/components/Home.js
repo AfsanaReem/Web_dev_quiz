@@ -7,7 +7,7 @@ const Home = () => {
     const topics = useLoaderData().data;
     return (
         <div>
-            <Container>
+            <Container className='mt-5'>
                 <Row xs={1} md={2} lg={4} >
                     {
                         topics.map(topic => <Topic
