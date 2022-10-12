@@ -11,7 +11,7 @@ const Header = () => {
                     <Navbar.Brand>Web Dev Quiz</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto justify-content-end">
+                        <Nav className="me-auto">
                             <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
                             <Nav.Link as={Link} to={'/topics'}>Quiz Topics</Nav.Link>
                             <Nav.Link as={Link} to={'/statistics'}>Chart</Nav.Link>
